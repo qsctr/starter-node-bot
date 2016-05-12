@@ -17,7 +17,7 @@ bot.startRTM(function (err, bot, payload) {
     }
 });
 
-controller.hears(['hello', 'hi'], ['mention'], function (bot, message) {
+controller.hears(['hello', 'hi'], ['direct_message', 'direct_mention', 'mention'], function (bot, message) {
     bot.reply(message, 'Hello.');
 });
 
@@ -25,7 +25,7 @@ controller.on('bot_channel_join', function (bot, message) {
     bot.reply(message, 'Hello world.');
 });
 
-controller.hears(['\\bex'], ['message_received'], function (bot, message) {
+controller.hears(['\\bex'], ['direct_message', 'direct_mention', 'mention', 'ambient'], function (bot, message) {
     if (message.text) {
         bot.reply(message, 'You mean: ' + message.text.replace(/(\bex)/i, 'VEX'));
     }
