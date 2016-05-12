@@ -27,6 +27,6 @@ controller.on('bot_channel_join', function (bot, message) {
 
 controller.hears(['\\bex'], ['direct_message', 'direct_mention', 'mention', 'ambient'], function (bot, message) {
     if (message.text) {
-        bot.reply(message, 'You mean: ' + message.text.replace(/(\bex)/i, 'VEX'));
+        bot.reply(message, 'You mean: ' + message.text.replace(/(\bex)/ig, 'VEX'));
     }
 });
