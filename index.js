@@ -22,7 +22,7 @@ controller.hears(['hello', 'hi'], ['direct_message', 'direct_mention', 'mention'
 });
 
 controller.on('bot_channel_join', function (bot, message) {
-    bot.reply(message, 'Hello world.');
+    bot.reply(message, 'Hello VEXabits.');
 });
 
 controller.hears(['\\bex'], ['direct_message', 'direct_mention', 'mention', 'ambient'], function (bot, message) {
