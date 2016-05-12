@@ -17,10 +17,16 @@ bot.startRTM(function (err, bot, payload) {
     }
 });
 
-controller.hears(['hello'], ['direct_message'], function (bot, message) {
+controller.hears(['hello', 'hi'], ['mention'], function (bot, message) {
     bot.reply(message, 'Hello.');
 });
 
 controller.on('bot_channel_join', function (bot, message) {
     bot.reply(message, 'Hello world.');
+});
+
+controller.hears(['\\bex'], ['message_received'], function (bot, message) {
+    if (message.text) {
+        bot.reply(message, 'You mean: ' + message.text.replace(/(\bex)/i, 'VEX'));
+    }
 });
