@@ -17,7 +17,11 @@ bot.startRTM(function (err, bot, payload) {
     }
 });
 
-controller.hears(['hello', 'hi'], ['direct_message', 'direct_mention', 'mention'], function (bot, message) {
+var importantMsgs = ['direct_message', 'direct_mention', 'mention'];
+
+var allMsgs = importantMsgs.concat('ambient');
+
+controller.hears(['hello', 'hi', 'how are you'], importantMsgs, function (bot, message) {
     bot.reply(message, 'Hello.');
 });
 
@@ -25,8 +29,12 @@ controller.on('bot_channel_join', function (bot, message) {
     bot.reply(message, 'Hello VEXabits.');
 });
 
-controller.hears(['\\bex'], ['direct_message', 'direct_mention', 'mention', 'ambient'], function (bot, message) {
+controller.hears(['\\bex'], allMsgs, function (bot, message) {
     if (message.text) {
         bot.reply(message, 'You mean: ' + message.text.replace(/(\bex)/ig, 'VEX'));
     }
+});
+
+controller.hears(['\\bbot\\b'], allMsgs, function (bot, message) {
+    bot.replay(message, 'Were you talking about me?');
 });
