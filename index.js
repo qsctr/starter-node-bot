@@ -36,5 +36,5 @@ controller.hears(['\\bex'], allMsgs, function (bot, message) {
 });
 
 controller.hears(['\\bbot\\b'], allMsgs, function (bot, message) {
-    bot.replay(message, 'Were you talking about me?');
+    bot.reply(message, 'Were you talking about me?');
 });
