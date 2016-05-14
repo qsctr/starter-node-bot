@@ -34,7 +34,3 @@ controller.hears(['\\bex'], allMsgs, function (bot, message) {
         bot.reply(message, 'You mean: ' + message.text.replace(/(\bex)/ig, 'VEX'));
     }
 });
-
-controller.hears(['\\bbot\\b'], allMsgs, function (bot, message) {
-    bot.reply(message, 'Were you talking about me?');
-});
