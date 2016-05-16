@@ -35,8 +35,8 @@ controller.hears(['\\bex'], allMsgs, function (bot, message) {
     }
 });
 
-controller.hears(['\\be\\Wx'], allMsgs, function (bot, message) {
+controller.hears(['\\be\\W+x'], allMsgs, function (bot, message) {
     if (message.text) {
-        bot.reply(message, "Don't do that, you mean: " + message.text.replace(/(\be\Wx)/ig, 'VEX'));
+        bot.reply(message, "Don't do that, you mean: " + message.text.replace(/(\be\W+x)/ig, 'VEX'));
     }
 });
