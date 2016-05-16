@@ -34,3 +34,9 @@ controller.hears(['\\bex'], allMsgs, function (bot, message) {
         bot.reply(message, 'You mean: ' + message.text.replace(/(\bex)/ig, 'VEX'));
     }
 });
+
+controller.hears(['\\be\\Wx'], allMsgs, function (bot, message) {
+    if (message.text) {
+        bot.reply(message, "Don't do that, you mean: " + message.text.replace(/(\be\Wx)/ig, 'VEX'));
+    }
+});
