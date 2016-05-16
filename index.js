@@ -40,3 +40,9 @@ controller.hears(['\\be\\W+x'], allMsgs, function (bot, message) {
         bot.reply(message, "Don't do that, you mean: " + message.text.replace(/(\be\W+x)/ig, 'VEX'));
     }
 });
+
+controller.hears(['serious'], allMsgs, function (bot, message) {
+    if (message.text) {
+        bot.reply(message, 'You mean: ' + message.text.replace(/(serious)/ig, 'serial'));
+    }
+});
