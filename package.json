@@ -10,6 +10,6 @@
     "author": "qsctr",
     "license": "MIT",
     "dependencies": {
-        "botkit": "0.0.5"
+        "botkit": "0.2.2"
     }
 }
