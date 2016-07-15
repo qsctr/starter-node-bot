@@ -21,13 +21,13 @@ var importantMsgs = ['direct_message', 'direct_mention', 'mention'];
 
 var allMsgs = importantMsgs.concat('ambient');
 
-controller.hears(['hello', 'hi', 'how are you'], importantMsgs, function (bot, message) {
+controller.hears(['hello', 'hi', 'how are you', 'hey'], importantMsgs, function (bot, message) {
     bot.reply(message, 'Hello.');
 });
 
-controller.on('bot_channel_join', function (bot, message) {
-    bot.reply(message, 'Hello VEXabits.');
-});
+// controller.on('bot_channel_join', function (bot, message) {
+//     bot.reply(message, 'Hello VEXabits.');
+// });
 
 controller.hears(['\\bex'], allMsgs, function (bot, message) {
     if (message.text) {
